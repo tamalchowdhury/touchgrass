@@ -59,15 +59,17 @@
     <script>
       const hand = document.querySelector(".hand")
 
+      document.addEventListener("drag", moveHand)
+
       document.addEventListener("mousemove", moveHand)
 
       document.addEventListener("mousedown", () => {
         hand.style.zoom = "0.95"
-        hand.classList.toggle("touch")
+        hand.classList.add("touch")
       })
       document.addEventListener("mouseup", () => {
         hand.style.zoom = "1"
-        hand.classList.toggle("touch")
+        hand.classList.remove("touch")
       })
 
       function moveHand(event) {
